@@ -33,17 +33,17 @@ int binarySearch(int arr[], int size, int start, int end, int target){
 
 
 int main(){
-    int arr[] = {7, 8, 0, 1, 2, 3};
+    int arr[] = {4, 5, 6, 7, 0, 1, 2};
     int size = sizeof(arr) / sizeof(arr[0]);
     int pivotIndex = getPivot(arr, size, 0, size - 1);
-    int target = 2;
+    int target = 1;
     int result;
 
     if(arr[pivotIndex] <= target && target <= arr[size - 1]){
        result = binarySearch(arr, size, pivotIndex, size -1, target);
        cout << result;
     } else {
-       result = binarySearch(arr, size, 0, pivotIndex, target);
+       result = binarySearch(arr, size, 0, pivotIndex -1, target);
        cout << result;
     }
 
