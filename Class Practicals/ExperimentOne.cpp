@@ -4,29 +4,37 @@
 using namespace std;
 
 void arrayInsert(int arr[], int size, int position, int item){
-    for(int i = size; i < position; i--){
+    int i = size;
+    while(i >= position){
         arr[i + 1] = arr[i];
+        i--; 
     }
     arr[position] = item;
+    size = size + 1;
+
+    for(int i = 0; i < size; i++){
+        cout << arr[i] << " ";
+    }
 }
 
 void arrayDelete(int arr[], int size, int position){
-    for(int i = position; i < size; i++){
-        arr[i] = arr[i + 1];
-    }
+    int i = position;
     size = size - 1;
-}
 
-void printArray(int arr[], int size){
+    while(i < size){
+        arr[i] = arr[i + 1];
+        i++;
+    }
+
     for(int i = 0; i < size; i++){
-        cout << arr[i] << endl;
+        cout << arr[i] << " ";
     }
 }
 
 int main(){
-    int arr[] ={1, 2, 3, 4, 5, 6, 7, 8};
+    int arr[] ={6, 3, 8, 5};
     int size = sizeof(arr) / sizeof(arr[0]);
-    arrayInsert(arr, size, 2, 9);
-    printArray(arr, size);
+    // arrayInsert(arr, size, 2, 1);
+    arrayDelete(arr, size, 2);
     return 0;
 }
