@@ -11,11 +11,11 @@ void mergerSortedArray(int arrOne[], int arrTwo[], int arrThree[], int m, int n)
         }
     }
 
-    while(i < n){
+    while(i <= n){
         arrThree[k++] = arrOne[i++];
     }
 
-    while(j < m){
+    while(j <= m){
         arrThree[k++] = arrTwo[j++];
     }
 }
@@ -24,10 +24,11 @@ int main(){
     int arrOne[4] = {1, 3, 5, 7};
     int arrTwo[3] = {2, 4, 6};
     int arrThree[7] = {};
+    int size = sizeof(arrThree) / sizeof(arrThree[0]);
 
     mergerSortedArray(arrOne, arrTwo, arrThree, 4, 3);
 
-    for(int i = 0; i < 6; i++){
+    for(int i = 0; i < size; i++){
         cout << arrThree[i] << endl;
     }
     return 0;
