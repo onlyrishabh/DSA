@@ -27,6 +27,9 @@ int main(){
             n++;
         }
     }
+    if(nums[nums.size() - 1] > nums[0]){
+        n++;
+    }
     cout << n;
     return 0;
 }
