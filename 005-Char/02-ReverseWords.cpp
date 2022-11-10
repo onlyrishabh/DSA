@@ -36,9 +36,34 @@ void reverseWords(string s){
     cout << temp[0];
 }
 
+// Approach 2 - Stack
+
+void reverseUsingStack(string s){
+    stack<string> st;
+    string str = "";
+
+    for(int i = 0; i < s.length(); i++){
+        if(s[i] == ' '){
+            st.push(str);
+            str = "";
+        } else str += s[i];
+    }
+
+    string ans = "";
+    // while(st.size() != 1){
+    //     ans += st.top() + " ";
+    //     st.pop();
+    // }
+    // ans += st.top();
+    while(st.size() != 0){
+        cout << st.top() << " ";
+        st.pop();
+    }
+    // return ans;
+}
 
 int main(){
     string s = "the sky is blue";
-    
+    reverseUsingStack(s);
     return 0;
 }
