@@ -48,6 +48,7 @@ void reverseUsingStack(string s){
             str = "";
         } else str += s[i];
     }
+    st.push(str);
 
     string ans = "";
     // while(st.size() != 1){
