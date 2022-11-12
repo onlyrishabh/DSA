@@ -12,7 +12,7 @@ char getMaxOccur(string s){
             n = s[i] - 'A';
         }
         arr[n]++;
-    }
+}
     
 
     int max = -1, ans = 0;
